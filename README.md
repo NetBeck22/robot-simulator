@@ -2,29 +2,7 @@
 
 Robot Simulator is a browser-based game for learning programming with visual blocks. Use Blockly to guide a robot through grid-based levels, then run or debug your program. The game interface and level instructions are in Dutch.
 
-## Run the game
-
-Requirements: Python 3 and a modern browser. An internet connection is needed because the page loads Blockly, Font Awesome, and the Roboto font from public CDNs.
-
-From the repository root, start a local web server:
-
-```sh
-python3 -m http.server 8000 --directory App
-```
-
-Open [http://localhost:8000/robot.html](http://localhost:8000/robot.html). Stop the server with `Ctrl+C`.
-
-The app should be served over HTTP. Opening `App/robot.html` directly may prevent its JavaScript modules and JSON files from loading correctly.
-
-## Install the npm dependency
-
-The repository includes `package.json` and `package-lock.json`, which declare Blockly `^10.0.2`. To install the declared npm dependencies, run this from the repository root:
-
-```sh
-npm install
-```
-
-This creates `node_modules/` locally. The current game page loads Blockly directly from `unpkg.com`, and the repository does not define npm run, build, or test scripts. Installing the npm dependency is therefore not required to run the game. Do not commit `node_modules/`; commit the package manifests when changing project dependencies.
+https://netbeck22.github.io/robot-simulator/App/robot.html
 
 ## Play
 
