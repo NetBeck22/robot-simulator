@@ -37,6 +37,11 @@ The toolbox includes movement, conditionals, loops, comparisons, text, math, and
 | 3 | Loops doolhof | Loops, variables, and a block limit |
 | 4 | Experts doolhof | Conditions, loops, and a block limit |
 
+## Project documents
+
+- [Robot simulator analysis (PDF)](PSOPV_Analyse_Robot_simulator.pdf)
+- [Robot simulator diagram](RobotSimulator_diagram.png)
+
 ## Project structure
 
 ```text
