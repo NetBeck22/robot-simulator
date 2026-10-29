@@ -1,12 +1,10 @@
 # Robot Simulator
 
-Robot Simulator is a browser-based programming game for learning to build programs with visual blocks. Guide a robot through grid-based levels using Blockly, then run your program or step through it in the debugger.
+Robot Simulator is a browser-based game for learning programming with visual blocks. Use Blockly to guide a robot through grid-based levels, then run or debug your program. The game interface and level instructions are in Dutch.
 
-The interface and level instructions are in Dutch.
+## Run the game
 
-## Run locally
-
-You need Python 3 and an internet connection. The app loads Blockly and a few presentation assets from public CDNs.
+Requirements: Python 3 and a modern browser. An internet connection is needed because the page loads Blockly, Font Awesome, and the Roboto font from public CDNs.
 
 From the repository root, start a local web server:
 
@@ -14,48 +12,61 @@ From the repository root, start a local web server:
 python3 -m http.server 8000 --directory App
 ```
 
-Open [http://localhost:8000/robot.html](http://localhost:8000/robot.html) in a modern browser. Stop the server with `Ctrl+C` when you are finished.
+Open [http://localhost:8000/robot.html](http://localhost:8000/robot.html). Stop the server with `Ctrl+C`.
 
-Serve the `App` directory because `robot.html` and its JavaScript modules use relative paths. Opening the HTML file directly may prevent those modules from loading.
+The app should be served over HTTP. Opening `App/robot.html` directly may prevent its JavaScript modules and JSON files from loading correctly.
+
+## Install the npm dependency
+
+The repository includes `package.json` and `package-lock.json`, which declare Blockly `^10.0.2`. To install the declared npm dependencies, run this from the repository root:
+
+```sh
+npm install
+```
+
+This creates `node_modules/` locally. The current game page loads Blockly directly from `unpkg.com`, and the repository does not define npm run, build, or test scripts. Installing the npm dependency is therefore not required to run the game. Do not commit `node_modules/`; commit the package manifests when changing project dependencies.
 
 ## Play
 
-1. Choose a level with **Levels**. Each level starts with a sample block program that you can edit.
-2. Arrange blocks in the workspace to guide the robot from its start to the goal while avoiding obstacles.
-3. Use **Run** to execute the program, or **Start debug** and **Step** to inspect it one block at a time.
-4. Use **Stop** to halt execution. The **Terminal** panel displays debugging details, variables, and feedback.
-5. Complete all displayed objectives to earn the level star.
+1. Select one of the four levels with **Levels**. Each level opens with a sample block program that you can edit.
+2. Arrange movement and logic blocks to reach the goal while avoiding walls and trees.
+3. Select **Run** to execute the program, or **Start debug** followed by **Step** to advance through it one step at a time.
+4. Select **Stop** to halt execution. Open **Terminal** to view debug messages, variables, and feedback.
+5. Complete the level's objectives to earn its star.
 
-The toolbox includes movement, conditionals, loops, comparisons, text, math, and variables. Objectives vary by level and can include reaching the end, avoiding faults, using loops or conditions, and staying within a block limit.
+The toolbox includes movement, conditionals, loops, comparisons, text, math, and variables. Objectives include reaching the end, avoiding faults, using specific programming concepts, and limiting the number of blocks.
 
-## Levels
-
-| Level | Name | Focus |
+| Level | Name | Main concepts |
 | --- | --- | --- |
-| 1 | Mijn eerste programma | Basic movement and reaching the end without faults |
-| 2 | Doolhof | Navigating a maze and using a loop |
+| 1 | Mijn eerste programma | Movement and avoiding faults |
+| 2 | Doolhof | Maze navigation and loops |
 | 3 | Loops doolhof | Loops, variables, and a block limit |
 | 4 | Experts doolhof | Conditions, loops, and a block limit |
+
+## Repository contents
+
+```text
+.
+├── App/
+│   ├── robot.html       Browser entry point
+│   ├── css/             App and Blockly styles
+│   ├── img/             Game images and interface icons
+│   ├── js/              Game, robot, level, Blockly, and debugger logic
+│   └── json/            Blockly locale and saved level workspaces
+├── package.json         Blockly dependency declaration
+├── package-lock.json    Locked npm dependency versions
+├── PSOPV_Analyse_Robot_simulator.pdf
+└── RobotSimulator_diagram.png
+```
 
 ## Project documents
 
 - [Robot simulator analysis (PDF)](PSOPV_Analyse_Robot_simulator.pdf)
 - [Robot simulator diagram](RobotSimulator_diagram.png)
 
-## Project structure
+## Code map
 
-```text
-App/
-  robot.html       Browser entry point
-  css/             App and Blockly workspace styles
-  img/             Game images and interface icons
-  js/              Game, robot, level, Blockly, and debugger logic
-  json/            Blockly locale and saved level workspaces
-```
-
-## Development notes
-
-- This is a static browser app; there is no package installation or build step.
-- Blockly is loaded from `unpkg.com` in `robot.html`. Font Awesome and the Roboto font are also loaded from external CDNs.
-- Level layouts, goals, and their starting Blockly programs are defined in `App/js/game.js`; Blockly toolbox categories are in `App/js/toolBox.js` and custom blocks are in `App/js/customBlocks.js`.
-- There is currently no automated test or build command configured.
+- `App/js/game.js` defines the level layouts, objectives, and starting workspaces.
+- `App/js/toolBox.js` defines the Blockly toolbox; `App/js/customBlocks.js` defines the custom movement and control blocks.
+- `App/js/debugger.js` manages program execution and step debugging.
+- `App/json/` contains the Blockly Dutch locale and saved block workspaces for the levels.
