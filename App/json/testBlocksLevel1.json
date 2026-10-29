@@ -1,0 +1,51 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "start",
+        "id": "EI~OXQ|@fVPCy)pzfxAd",
+        "x": 30,
+        "y": 50,
+        "inputs": {
+          "VALUE": {
+            "block": {
+              "type": "moveDown",
+              "id": "^]xGXkA-0S4+aQ0_iA)O",
+              "fields": {
+                "VALUE": 1
+              },
+              "next": {
+                "block": {
+                  "type": "moveLeft",
+                  "id": "`oRBnwjL0hAjzVd}@T6m",
+                  "fields": {
+                    "VALUE": 2
+                  },
+                  "next": {
+                    "block": {
+                      "type": "moveUp",
+                      "id": "W~mYhMV$0D3YkyQ~6R8W",
+                      "fields": {
+                        "VALUE": 3
+                      },
+                      "next": {
+                        "block": {
+                          "type": "moveRight",
+                          "id": "zP1*`?6q!scKHg*{f+,n",
+                          "fields": {
+                            "VALUE": 3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

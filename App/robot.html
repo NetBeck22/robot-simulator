@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robot Simulator</title>
+    <link rel="stylesheet" href="css/mainStyleSheet.css" />
+    <link rel="stylesheet" href="css/toolBoxStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <div id="menu">
+      <h2><img src="./img/robot.png" alt="logo" /> Robot Simulator</h2>
+      <div id="title">
+        <h3 id="levelTitle"></h3>
+        <img src="./img/star.png" alt="ster" id="levelStar" />
+      </div>
+      <div id="menuButtons">
+        <button id="levelMenu">Levels</button
+        ><button id="terminalMenu">Terminal</button>
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="workspace">
+        <div id="debugButtons">
+          <button role="button" id="runButton">
+            <i class="fa fa-play"></i> Run
+          </button>
+          <button role="button" id="startDebugButton">
+            <i class="fa fa-bug"></i> Start debug
+          </button>
+          <button role="button" id="stepButton">
+            <i class="fa fa-step-forward"></i> Stap
+          </button>
+          <button role="button" id="stopButtonRun">
+            <i class="fa fa-stop"></i> Stop
+          </button>
+          <button role="button" id="stopButtonDebug">
+            <i class="fa fa-stop"></i> Stop
+          </button>
+        </div>
+        <div id="blocklyDiv"></div>
+      </div>
+      <div id="levelDiv">
+        <canvas id="levelCanvas"></canvas>
+
+        <div id="goals">
+          <div id="goalsDiv1">
+            <img src="./img/check.png" id="check1" />
+            <p id="goal1"></p>
+          </div>
+          <div id="goalsDiv2">
+            <img src="./img/check.png" id="check2" />
+            <p id="goal2"></p>
+          </div>
+          <div id="goalsDiv3">
+            <img src="./img/check.png" id="check3" />
+            <p id="goal3"></p>
+          </div>
+          <div id="goalsDiv4">
+            <img src="./img/check.png" id="check4" />
+            <p id="goal4"></p>
+          </div>
+          <div id="goalsDiv5">
+            <img src="./img/check.png" id="check5" />
+            <p id="goal5"></p>
+          </div>
+        </div>
+      </div>
+      <div id="terminal">
+        <div id="titleTerminal">
+          <h3>Terminal</h3>
+          <button id="closeTerminal">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+        <div id="debugDiv">
+          <h3><i class="fa fa-bug"></i> Wat gebeurt er?</h3>
+          <p id="debug"></p>
+        </div>
+        <div id="debugVarsDiv">
+          <h3><i class="fa fa-bug"></i> Variabelen:</h3>
+          <p id="debugVars"></p>
+        </div>
+        <div id="feedbackDiv">
+          <h3><i class="fa fa-exclamation-triangle"></i> Let op:</h3>
+          <p id="feedback"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+        <h1>Kies een level !</h1>
+        <div id="levelButtons">
+          <button id="level1">
+            Level 1 <img src="./img/star.png" alt="ster" id="levelStar1" />
+          </button>
+          <button id="level2">
+            Level 2 <img src="./img/star.png" alt="ster" id="levelStar2" />
+          </button>
+          <button id="level3">
+            Level 3 <img src="./img/star.png" alt="ster" id="levelStar3" />
+          </button>
+          <button id="level4">
+            Level 4 <img src="./img/star.png" alt="ster" id="levelStar4" />
+          </button>
+        </div>
+        <button id="closePopup">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/blockly/blockly_compressed"></script>
+    <script src="https://unpkg.com/blockly/blocks_compressed"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/customBlocks.js"></script>
+    <script type="module" src="js/toolBox.js"></script>
+  </body>
+</html>

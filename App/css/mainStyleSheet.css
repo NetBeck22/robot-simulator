@@ -1,0 +1,275 @@
+body {
+  font-family: "Roboto";
+  margin: 0;
+}
+#main {
+  display: flex;
+  height: 85vh;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#blocklyDiv {
+  margin-top: 10px;
+  height: 92%;
+}
+
+#workspace {
+  flex-grow: 1;
+  z-index: 0;
+}
+
+#terminal {
+  width: 20%;
+  height: 100%;
+  display: none;
+}
+
+#titleTerminal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#closeTerminal {
+  border: none;
+  background: none;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+}
+
+#levelDiv {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 420px;
+}
+#levelStar {
+  display: none;
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+}
+
+#feedbackDiv,
+#debugDiv,
+#debugVarsDiv {
+  margin-top: 10px;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  display: none;
+  font-size: medium;
+  padding: 10px;
+}
+
+#terminal > div > * {
+  margin: 0;
+}
+
+button {
+  font-weight: bold;
+}
+
+#feedbackDiv {
+  background-color: crimson;
+  color: white;
+}
+
+#debugDiv,
+#debugVarsDiv {
+  background-color: gold;
+}
+
+#debugButtons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+#runButton,
+#startDebugButton,
+#stepButton {
+  padding: 10px;
+  background-color: gold;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: medium;
+}
+
+#runButton:hover,
+#startDebugButton:hover,
+#stepButton:hover {
+  cursor: pointer;
+  background-color: goldenrod;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: medium;
+}
+
+#stepButton {
+  display: none;
+}
+
+#stopButtonDebug {
+  display: none;
+}
+
+#stopButtonRun {
+  display: none;
+}
+
+#stopButtonRun,
+#stopButtonDebug,
+#levelButtons > button {
+  padding: 10px;
+  background-color: crimson;
+  border-radius: 10px;
+  border: none;
+  font-size: medium;
+  color: white;
+}
+
+#stopButtonRun:hover,
+#stopButtonDebug:hover,
+#levelButtons > button:hover {
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: medium;
+}
+
+#levelButtons button > img {
+  display: none;
+  height: 20px;
+  width: 20px;
+}
+
+#levelButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+#goals > div {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+#goals > div > img {
+  display: none;
+  height: 20px;
+  width: 20px;
+  vertical-align: bottom;
+}
+#goals {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.popup-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 40%;
+  font-weight: bolder;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.popup-content button {
+  display: block;
+  margin: 0 auto;
+}
+#closePopup {
+  margin-top: 20px;
+  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: none;
+}
+#closePopup > i,
+#closeTerminal > i {
+  font-size: 24px;
+  color: crimson;
+}
+
+.show {
+  display: block;
+}
+
+.popup-content > h1 {
+  width: 100%;
+}
+
+#menu {
+  width: 100%;
+  background-color: crimson;
+  top: 0;
+  display: flex;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+
+#menuButtons button {
+  border: none;
+  background: none;
+  color: whitesmoke;
+  font-size: large;
+}
+
+#menuButtons button:hover {
+  border: none;
+  background: none;
+  color: darkred;
+  font-size: large;
+}
+
+#menuButtons {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#menu > h2 {
+  margin-left: 20px;
+  align-items: center;
+  width: 20%;
+}
+
+#menu > h2 > img {
+  height: 35px;
+}
