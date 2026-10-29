@@ -1,5 +1,5 @@
 import { Game } from "./game.js";
-import nl from "../json/nl.json" assert { type: "json" };
+import nl from "../json/nl.json" with { type: "json" };
 
 Blockly.setLocale(nl);
 const game = new Game();

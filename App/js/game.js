@@ -3,11 +3,11 @@ import { Robot } from "./robot.js";
 import { levelAttribute, ATTRIBUTE_TYPE } from "./levelAttribute.js";
 import { Level } from "./level.js";
 import { Goal, GOAL_TYPE } from "./goal.js";
-import testBlocksLevel1 from "../json/testBlocksLevel1.json" assert { type: "json" };
-import testBlocksLevel3 from "../json/testBlocksLevel3.json" assert { type: "json" };
-import testBlocksLevel2 from "../json/testBlocksLevel2.json" assert { type: "json" };
-import testBlocksLevel4 from "../json/testBlocksLevel4.json" assert { type: "json" };
-import faultBlocksLevel1 from "../json/faultBlocksLevel1.json" assert { type: "json" };
+import testBlocksLevel1 from "../json/testBlocksLevel1.json" with { type: "json" };
+import testBlocksLevel3 from "../json/testBlocksLevel3.json" with { type: "json" };
+import testBlocksLevel2 from "../json/testBlocksLevel2.json" with { type: "json" };
+import testBlocksLevel4 from "../json/testBlocksLevel4.json" with { type: "json" };
+import faultBlocksLevel1 from "../json/faultBlocksLevel1.json" with { type: "json" };
 
 /**
  * Game
